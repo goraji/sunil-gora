@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Fname: <input type="text" id="a" onkeydown="fxn(event)"><br>
+    Lname: <input type="text" id="b" onkeydown="fxn(event)"><br>
+    age: <input type="text" id="c" onkeydown="fxn(event)"><br>
+    <button type="submit" id="d" onclick="alert('save button clicked vedi ji without clicking')">submit</button>
+</body>
+<script>
+    var ids = ['a','b','c','d'];
+    function fxn(e){
+        try {
+            for (let i = 0; i < ids.length; i++) {
+                if(e.keyCode === 13 && e.target.id === ids[i]){
+                    document.querySelector(`#${ids[i+1]}`).focus()
+                }
+            }
+        } catch (error) {
+            
+        }
+    }
+</script>
+</html>
